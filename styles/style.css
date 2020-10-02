@@ -1,0 +1,83 @@
+body {
+	user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	box-sizing: border-box;
+	overflow: visible;
+	/* */
+	background-size: contain;
+	background-position: top;
+	background-image: url("../assets/joker.jpg");
+	/* background-blend-mode: lighten;
+	background-color: mediumpurple; */
+	background-blend-mode: saturation;
+	background-color: #2e0066;
+}
+
+h2 {
+	font-size: 1.3rem;
+}
+
+header,
+main {
+	max-width: 768px;
+}
+
+#outlet p {
+	font-size: 1.5rem;
+}
+
+#outlet p:before {
+	content: "🃏";
+	font-size: 3rem;
+	display: inline-block;
+	transform: rotateZ(-25deg);
+	margin-right: 1rem;
+}
+
+#outlet p:after {
+	content: " 🃏";
+	font-size: 3rem;
+	display: inline-block;
+	transform: rotateZ(25deg);
+	margin-left: 1rem;
+}
+
+/* custom CSS */
+.text-purple {
+	color: mediumpurple;
+}
+
+.text-darkslateblue {
+	color: darkslateblue;
+}
+
+.bg-purple {
+	background-color: mediumpurple;
+}
+
+.bg-rebeccapurple {
+	background-color: rebeccapurple;
+}
+
+.border-purple {
+	border-color: mediumpurple !important;
+}
+
+.border-darkgray {
+	border-color: darkgray !important;
+}
+
+.btn-outline-purple {
+	color: mediumpurple;
+	border-color: mediumpurple;
+}
+.btn-outline-purple:hover {
+	color: darkslateblue;
+	border-color: mediumpurple;
+	background-color: mediumpurple;
+}
+.btn-outline-purple:active {
+	color: gainsboro;
+}
