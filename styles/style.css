@@ -24,24 +24,30 @@ main {
 	max-width: 768px;
 }
 
-#outlet p {
-	font-size: 1.5rem;
-}
-
 #outlet p:before {
 	content: "🃏";
-	font-size: 3rem;
-	display: inline-block;
+	font-size: 2rem;
+	font-style: normal;
 	transform: rotateZ(-25deg);
-	margin-right: 1rem;
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
 }
 
 #outlet p:after {
-	content: " 🃏";
-	font-size: 3rem;
-	display: inline-block;
+	content: "🃏";
+	font-size: 2rem;
+	font-style: normal;
 	transform: rotateZ(25deg);
-	margin-left: 1rem;
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+	.card {
+		max-width: 60%;
+	}
 }
 
 /* custom CSS */
@@ -69,15 +75,39 @@ main {
 	border-color: darkgray !important;
 }
 
+.btn:focus {
+	box-shadow: none;
+}
+
 .btn-outline-purple {
 	color: mediumpurple;
 	border-color: mediumpurple;
 }
 .btn-outline-purple:hover {
 	color: darkslateblue;
+	color: gainsboro;
 	border-color: mediumpurple;
 	background-color: mediumpurple;
 }
 .btn-outline-purple:active {
 	color: gainsboro;
+	color: darkslateblue;
+}
+
+/* dynamic class */
+.progress-bar {
+	width: 0%;
+}
+
+.download-10 {
+	width: 10% !important;
+}
+.download-25 {
+	width: 25% !important;
+}
+.download-75 {
+	width: 75% !important;
+}
+.download-100 {
+	width: 100% !important;
 }
