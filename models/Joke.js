@@ -1,7 +1,9 @@
 "use strict";
 var Joke = /** @class */ (function () {
-    function Joke(joke) {
-        this.joke = joke;
+    function Joke(
+    // prettier-ignore
+    id, joke) {
+        this.id = id;
         this.joke = joke;
         Joke.list.push(this);
     }

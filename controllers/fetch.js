@@ -1,13 +1,12 @@
 "use strict";
 $(function () {
     // fetch API
-    $("form").submit(function (e) {
+    $("form").on("submit", function (e) {
         e.preventDefault();
         // AJAX
         $.ajax({
             type: "GET",
             url: "http://api.icndb.com/jokes/random",
-            // data: "data",
             dataType: "json",
             success: function (res) {
                 // 1. LOADING...
@@ -24,8 +23,8 @@ $(function () {
                 // alerts
                 $(".alert-info").removeClass("d-none");
                 $(".alert-success").addClass("d-none");
-                // data toString
-                $("#outlet p").html("Why so seriuous?"); // clear outlet
+                // clear outlet
+                $("#outlet p").html("Why so seriuous?");
                 setTimeout(function () { return $("#fetch-progress .progress-bar").addClass("download-10"); }, 800);
                 setTimeout(function () { return $("#fetch-progress .progress-bar").addClass("download-25"); }, 1000);
                 setTimeout(function () { return $("#fetch-progress .progress-bar").addClass("download-75"); }, 2500);
@@ -41,9 +40,11 @@ $(function () {
                     // alerts
                     $(".alert-info").addClass("d-none");
                     $(".alert-success").removeClass("d-none");
-                    // data toString
-                    $("#outlet p").html("" + res.value.joke);
-                    $("#outlet p").focus();
+                    // save data in class
+                    new Joke(res.value.id, res.value.joke); // Joke.list
+                    // outlet
+                    var lastindex = Joke.getList.length - 1;
+                    $("#outlet p").html("" + Joke.getList[lastindex].getJoke);
                 }, 3500);
             },
             error: function (xhr, status, error) {

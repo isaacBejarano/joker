@@ -5,12 +5,9 @@ body {
 	-moz-user-select: none;
 	box-sizing: border-box;
 	overflow: visible;
-	/* */
 	background-size: contain;
 	background-position: top;
 	background-image: url("../assets/joker.jpg");
-	/* background-blend-mode: lighten;
-	background-color: mediumpurple; */
 	background-blend-mode: saturation;
 	background-color: #2e0066;
 }
@@ -61,10 +58,6 @@ main {
 
 .bg-purple {
 	background-color: mediumpurple;
-}
-
-.bg-rebeccapurple {
-	background-color: rebeccapurple;
 }
 
 .border-purple {

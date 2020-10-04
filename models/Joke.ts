@@ -1,9 +1,11 @@
 class Joke {
 	private static readonly list: Joke[] = [];
 
-	constructor(private readonly joke: string) {
-		this.joke = joke;
-
+	constructor(
+		// prettier-ignore
+		private readonly id: number,
+		private readonly joke: string
+	) {
 		Joke.list.push(this);
 	}
 

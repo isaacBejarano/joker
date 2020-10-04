@@ -1,13 +1,12 @@
 $(() => {
 	// fetch API
-	$("form").submit(e => {
+	$("form").on("submit", e => {
 		e.preventDefault();
 
 		// AJAX
 		$.ajax({
-			type: "GET",
+			type: "GET", 
 			url: "http://api.icndb.com/jokes/random",
-			// data: "data",
 			dataType: "json",
 			success: res => {
 				// 1. LOADING...
@@ -29,8 +28,8 @@ $(() => {
 				$(".alert-info").removeClass("d-none");
 				$(".alert-success").addClass("d-none");
 
-				// data toString
-				$("#outlet p").html("Why so seriuous?"); // clear outlet
+				// clear outlet
+				$("#outlet p").html("Why so seriuous?");
 
 				setTimeout(() => $("#fetch-progress .progress-bar").addClass("download-10"), 800);
 				setTimeout(() => $("#fetch-progress .progress-bar").addClass("download-25"), 1000);
@@ -53,9 +52,12 @@ $(() => {
 					$(".alert-info").addClass("d-none");
 					$(".alert-success").removeClass("d-none");
 
-					// data toString
-					$("#outlet p").html(`${res.value.joke}`);
-					$("#outlet p").focus()
+					// save data in class
+					new Joke(res.value.id, res.value.joke); // Joke.list
+
+					// outlet
+					let lastindex = Joke.getList.length - 1;
+					$("#outlet p").html(`${Joke.getList[lastindex].getJoke}`);
 				}, 3500);
 			},
 			error: (xhr, status, error) => {
